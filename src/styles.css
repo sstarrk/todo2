@@ -1,37 +1,46 @@
 *, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  * {
-    margin: 0;
-  }
-  
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 600;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-  }
-  
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  
-  p {
-    text-wrap: pretty;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
+ box-sizing: border-box;
+}
+
+* {
+ margin: 0;
+}
+
+body {
+ line-height: 1.5;
+ -webkit-font-smoothing: antialiased;
+ font-family: "Montserrat", sans-serif;
+ font-weight: 600;
+ font-size: 1.2rem;
+ letter-spacing: 1px;
+}
+
+img, picture, video, canvas, svg {
+ display: block;
+ max-width: 100%;
+}
+
+input, button, textarea, select {
+ font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+ overflow-wrap: break-word;
+}
+
+p {
+ text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+ text-wrap: balance;
+}
+
+:root {
+    --left-bg-color: #e6ebf1;
+    --main-color: #ffffff;
+    --right-bg-color: #f0f4f8;
+    --heading-color: #606d7c;
+    --text-color: #aab1b8;
+    --padding-color: #bbc9d0;
+}
