@@ -9,6 +9,103 @@
     <title>Todo</title>
 </head>
 <body>
-    
+    <main>
+        <p class="heading left" style="border-top-left-radius: 15px;">Projects</p>
+        <p class="heading right" style="border-top-right-radius: 15px;" >Tasks <button class="new">New Task</button></p>
+        <div class="projects left">
+            <p style="background-color: #e6ecf4;">Default</p>
+            <p>Work</p>
+            <p>Personal</p>
+            <p>Shopping</p>
+            <p>Travel</p>
+            <p>Home</p>
+            <p>Finance</p>
+        </div>
+        <div class="tasks right">
+            <div class="card">
+                <p class="name">Do smth</p>
+                <div class="rest">
+                    <p class="due">Due: 04/15</p>
+                    <p class="priority">Priority: Medium</p>
+                    <div class="imgs">
+                        <img src="./Images/edit-3-svgrepo-com.svg" alt="edit">
+                        <img src="./Images/delete-svgrepo-com.svg" alt="delete">
+                    </div>
+                </div>
+                <p class="description">Some description</p>
+            </div>
+            <div class="card">
+                <p class="name">Do smth</p>
+                <div class="rest">
+                    <p class="due">Due: 04/15</p>
+                    <p class="priority">Priority: Medium</p>
+                    <div class="imgs">
+                        <img src="./Images/edit-3-svgrepo-com.svg" alt="edit">
+                        <img src="./Images/delete-svgrepo-com.svg" alt="delete">
+                    </div>
+                </div>
+                <p class="description">Some description</p>
+            </div>
+            <div class="card">
+                <p class="name">Do smth</p>
+                <div class="rest">
+                    <p class="due">Due: 04/15</p>
+                    <p class="priority">Priority: Medium</p>
+                    <div class="imgs">
+                        <img src="./Images/edit-3-svgrepo-com.svg" alt="edit">
+                        <img src="./Images/delete-svgrepo-com.svg" alt="delete">
+                    </div>
+                </div>
+                <p class="description">Some description</p>
+            </div>
+        </div>
+    </main>
+    <dialog id="modal">
+        <div class="container">
+            <img src="./Images/close-circle-svgrepo-com.svg" alt="close">
+            <form method="dialog">
+                <div>
+                    <label for="input-name">Name of the task:</label>
+                    <input type="text" id="input-name" name="input-name">
+                </div>
+                <div>
+                    <label for="input-desc">Description:</label>
+                    <textarea type="text" id="input-desc" name="input-desc"></textarea>
+                </div>
+                <div>
+                    <label for="input-date">DueDate:</label>
+                    <input type="date" id="input-date" name="input-date">
+                </div>
+                <fieldset>
+                    <legend>Choose priority of the task</legend>
+                    <div>
+                        <input type="radio" id="high" name="priority" value="High"/>
+                        <label for="high" style="background-color: red; padding: 5px 10px; border-radius: 15px; color: lightgrey;">High</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="medium" name="priority" value="Medium"/>
+                        <label for="medium" style="background-color: yellow; padding: 5px 10px; border-radius: 15px; color: #333333;">Medium</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="low" name="priority" value="Low"/>
+                        <label for="low" style="background-color: green; padding: 5px 10px; border-radius: 15px; color: lightgray;">Low</label>
+                    </div>
+                </fieldset>
+                    <div class="selection">
+                        <label for="pr-select">Choose a project:</label>
+                        <select name="prs" id="pr-select">
+                            <option value="Default">Default</option>
+                            <option value="Work">Work</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Travel">Travel</option>
+                            <option value="Home">Home</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                    <button type="button" id="add">Add Task</button>
+            </form>
+        </div>
+    </dialog>
 </body>
 </html>
