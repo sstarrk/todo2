@@ -154,10 +154,10 @@ img {
 }
 
 dialog {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: 100%;
