@@ -46,3 +46,24 @@ export function clearInputs() {
         check.checked = false;
     });
 }
+
+let tasksDiv = document.querySelector(".tasks");
+export function displayTasks(project) {
+    const taskList = project.getList;
+    taskList.forEach(task => {
+        tasksDiv.innerHTML = tasksDiv.innerHTML + `
+            <div class="card">
+                <p class="name">${task.getName}</p>
+                <div class="rest">
+                    <p class="due">Due: ${task.getDate}</p>
+                    <p class="priority">Priority: ${task.getPriority}</p>
+                    <div class="imgs">
+                        <img src="https://www.svgrepo.com/show/522527/edit-3.svg" alt="edit">
+                        <img src="https://www.svgrepo.com/show/500535/delete.svg" alt="delete">
+                    </div>
+                </div>
+                <p class="description">${task.getDesc}</p>
+            </div>
+        `
+    });
+};

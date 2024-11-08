@@ -1,6 +1,6 @@
 import "./styles.css"
 import "./DOM.js"
-import { getInputs, isInputEmpty, closeModal, clearInputs } from "./DOM.js";
+import { getInputs, isInputEmpty, closeModal, clearInputs, displayTasks } from "./DOM.js";
 
 class Project {
     constructor(name) {
@@ -40,6 +40,22 @@ class Task {
         this.project = project;
     }
 
+    get getName() {
+        return this.name;
+    }
+    
+    get getDesc() {
+        return this.description;
+    }
+    
+    get getDate() {
+        return this.dueDate;
+    }
+
+    get getPriority() {
+        return this.priority;
+    }
+
     get getProject() {
         return this.project;
     }
@@ -68,5 +84,6 @@ export function makeTask() {
         }
         closeModal();
         clearInputs();
+        displayTasks(allProjects.allTasks);
     };
 };
