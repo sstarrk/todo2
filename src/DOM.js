@@ -20,8 +20,9 @@ export function getInputs() {
     const nameDescription = document.querySelector("#input-desc").value;
     const nameDueDate = document.querySelector("#input-date").value;
     const taskPriority = document.querySelector('input[name="priority"]:checked')?.value;
+    const prName = document.querySelector("#pr-select").value;
 
-    return { nameInput, nameDescription, nameDueDate, taskPriority };
+    return { nameInput, nameDescription, nameDueDate, taskPriority, prName };
 };
 
 const addTaskBtn = document.querySelector("#add");

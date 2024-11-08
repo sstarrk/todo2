@@ -29,7 +29,7 @@ const allProjects = {
     travelPr: new Project("Travel"),
     homePr: new Project("Home"),
     financePr: new Project("Finance")
-}
+};
 
 class Task {
     constructor(name, description, dueDate, priority, project) {
@@ -38,6 +38,10 @@ class Task {
         this.dueDate = dueDate;
         this.priority = priority;
         this.project = project;
+    }
+
+    get getProject() {
+        return this.project;
     }
 }
 
@@ -52,9 +56,16 @@ export function makeTask() {
         const newTask = new Task(getInputs().nameInput, 
                                  getInputs().nameDescription, 
                                  getInputs().nameDueDate, 
-                                 getInputs().taskPriority);
-        allProjects.allTasks.addTaskToList(newTask);
-        console.log(allProjects.allTasks.getList);
+                                 getInputs().taskPriority,
+                                 getInputs().prName);
+        for(const pr in allProjects) {
+            if(allProjects[pr].getName == newTask.getProject) {
+                allProjects[pr].addTaskToList(newTask);
+            }
+        }
+        if(newTask.getProject != "Default") {
+            allProjects.allTasks.addTaskToList(newTask);
+        }
         closeModal();
         clearInputs();
     };
