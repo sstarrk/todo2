@@ -43,10 +43,25 @@ class Task {
 
 export function makeTask() {
     getInputs();
-    const newTask = new Task(getInputs().nameInput, 
-                            getInputs().nameDescription, 
-                            getInputs().nameDueDate, 
-                            getInputs().taskPriority);
-    allProjects.allTasks.addTaskToList(newTask);
-    console.log(allProjects.allTasks.getList);
-}
+    if(isInputEmpty(getInputs().nameInput, 
+                    getInputs().nameDescription, 
+                    getInputs().nameDueDate, 
+                    getInputs().taskPriority)) {
+        
+    } else {
+        const newTask = new Task(getInputs().nameInput, 
+                                 getInputs().nameDescription, 
+                                 getInputs().nameDueDate, 
+                                 getInputs().taskPriority);
+        allProjects.allTasks.addTaskToList(newTask);
+        console.log(allProjects.allTasks.getList);
+    };
+};
+
+function isInputEmpty(name, desc, date, prior) {
+    if(name == "" || desc == "" || date == "" || (prior != "High" && prior != "Medium" && prior != "Low")) {
+        return true;
+    } else {
+        return false;
+    };
+};
