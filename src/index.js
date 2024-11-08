@@ -1,5 +1,6 @@
 import "./styles.css"
 import "./DOM.js"
+import { getInputs } from "./DOM.js";
 
 class Project {
     constructor(name) {
@@ -15,7 +16,7 @@ class Project {
         return this._tasks;
     }
 
-    set addTaskToList(task) {
+    addTaskToList(task) {
         this._tasks.push(task);
     };
 };
@@ -40,4 +41,12 @@ class Task {
     }
 }
 
-
+export function makeTask() {
+    getInputs();
+    const newTask = new Task(getInputs().nameInput, 
+                            getInputs().nameDescription, 
+                            getInputs().nameDueDate, 
+                            getInputs().taskPriority);
+    allProjects.allTasks.addTaskToList(newTask);
+    console.log(allProjects.allTasks.getList);
+}
