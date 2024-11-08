@@ -6,9 +6,13 @@ newTaskBtn.addEventListener("click", () => {
     modal.style.display = "flex";
 });
 
+export function closeModal() {
+    modal.style.display = "none";
+}
+
 const closeBtn = document.querySelector("#close");
 closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
+    closeModal();
 });
 
 export function getInputs() {
@@ -24,3 +28,20 @@ const addTaskBtn = document.querySelector("#add");
 addTaskBtn.addEventListener("click", () => {
     makeTask();
 });
+
+export function isInputEmpty(name, desc, date, prior) {
+    if(name == "" || desc == "" || date == "" || (prior != "High" && prior != "Medium" && prior != "Low")) {
+        return true;
+    } else {
+        return false;
+    };
+};
+
+export function clearInputs() {
+    document.querySelector("#input-name").value = "";
+    document.querySelector("#input-desc").value = "";
+    document.querySelector("#input-date").value = "";
+    document.querySelectorAll('input[name="priority"]').forEach(check => {
+        check.checked = false;
+    });
+}

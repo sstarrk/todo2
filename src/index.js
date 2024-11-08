@@ -1,6 +1,6 @@
 import "./styles.css"
 import "./DOM.js"
-import { getInputs } from "./DOM.js";
+import { getInputs, isInputEmpty, closeModal, clearInputs } from "./DOM.js";
 
 class Project {
     constructor(name) {
@@ -55,13 +55,7 @@ export function makeTask() {
                                  getInputs().taskPriority);
         allProjects.allTasks.addTaskToList(newTask);
         console.log(allProjects.allTasks.getList);
-    };
-};
-
-function isInputEmpty(name, desc, date, prior) {
-    if(name == "" || desc == "" || date == "" || (prior != "High" && prior != "Medium" && prior != "Low")) {
-        return true;
-    } else {
-        return false;
+        closeModal();
+        clearInputs();
     };
 };
