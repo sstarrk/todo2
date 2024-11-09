@@ -47,15 +47,43 @@ export function clearInputs() {
     });
 }
 
+function convertDate(date) {
+    const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+    const monthNum = date.split("-")[1];
+    let thisMonth = null;
+    if(monthNum.split("")[0] == 0) {
+        thisMonth = months[monthNum.split("")[1] - 1];
+    } else {
+        thisMonth = months[monthNum - 1];
+    }
+    const thisDay = date.split("-")[2];
+
+    return thisMonth + " " + thisDay;
+}
+
 let tasksDiv = document.querySelector(".tasks");
 export function displayTasks(project) {
+    tasksDiv.innerHTML = "";
     const taskList = project.getList;
     taskList.forEach(task => {
         tasksDiv.innerHTML = tasksDiv.innerHTML + `
             <div class="card">
                 <p class="name">${task.getName}</p>
                 <div class="rest">
-                    <p class="due">Due: ${task.getDate}</p>
+                    <p class="due">Due: ${convertDate(task.getDate)}</p>
                     <p class="priority">Priority: ${task.getPriority}</p>
                     <div class="imgs">
                         <img src="https://www.svgrepo.com/show/522527/edit-3.svg" alt="edit">
