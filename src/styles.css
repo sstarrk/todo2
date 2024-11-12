@@ -199,3 +199,40 @@ fieldset {
     justify-content: space-between;
     gap: 5px;
 }
+
+.edit-input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--padding-color);
+    border-radius: 4px;
+    font-size: inherit;
+    font-family: inherit;
+    background-color: white;
+}
+
+.name-input {
+    font-size: 1.3rem;
+}
+
+.desc-input {
+    min-height: 60px;
+    resize: vertical;
+}
+
+.priority-select {
+    padding: 2px 5px;
+    border: 1px solid var(--padding-color);
+    border-radius: 4px;
+}
+
+.date-input {
+    width: auto;
+    margin-left: 5px;
+}
+
+.projects p:hover {
+    background-color: var(--right-bg-color);
+}
+.projects p.active {
+    background-color: var(--right-bg-color);
+}

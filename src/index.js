@@ -21,7 +21,7 @@ class Project {
     };
 };
 
-const allProjects = {
+export const allProjects = {
     allTasks: new Project("Default"),
     workPr: new Project("Work"),
     personalPr: new Project("Personal"),
@@ -31,7 +31,7 @@ const allProjects = {
     financePr: new Project("Finance")
 };
 
-class Task {
+export class Task {
     constructor(name, description, dueDate, priority, project) {
         this.name = name;
         this.description = description;
