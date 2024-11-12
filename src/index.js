@@ -1,6 +1,7 @@
 import "./styles.css"
 import "./DOM.js"
 import { getInputs, isInputEmpty, closeModal, clearInputs, displayTasks } from "./DOM.js";
+import { saveProjects } from "./storage.js";
 
 class Project {
     constructor(name) {
@@ -85,5 +86,6 @@ export function makeTask() {
         closeModal();
         clearInputs();
         displayTasks(allProjects.allTasks);
+        saveProjects();
     };
 };
